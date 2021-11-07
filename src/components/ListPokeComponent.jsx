@@ -104,8 +104,7 @@ class ListPokeComponent extends Component {
              </tbody>
             
             </table>
-            <Link to="/">Take me to login</Link>
-            <button onClick={() => this.props.history.push("/")}>Take me to \</button>
+      
 
         </div>
 
