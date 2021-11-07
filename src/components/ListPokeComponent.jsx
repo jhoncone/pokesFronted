@@ -15,7 +15,7 @@ class ListPokeComponent extends Component {
        }
        viewPoke(id){
         this.props.history.push(`/view-poke/${id}`);
-       // this.props.history.push(`/update-producto/${id}`);
+ 
        }
 
        componentDidMount(){
