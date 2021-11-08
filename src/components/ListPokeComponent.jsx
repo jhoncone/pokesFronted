@@ -15,6 +15,7 @@ class ListPokeComponent extends Component {
        }
        viewPoke(id){
         this.props.history.push(`/view-poke/${id}`);
+ 
        }
 
        componentDidMount(){
@@ -22,6 +23,7 @@ class ListPokeComponent extends Component {
         this.setState({pokes:res.data});
         });
 
+        
        
     } 
 
@@ -103,6 +105,8 @@ class ListPokeComponent extends Component {
              </tbody>
             
             </table>
+      
+
         </div>
 
 
