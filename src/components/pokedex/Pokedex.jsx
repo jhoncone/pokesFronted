@@ -3,9 +3,6 @@ import M from "materialize-css";
 import Evolu from './evolu/Evolu';
 import Poke from './poke/Poke';
 class Pokedex extends Component {
-
-
-
     constructor(props){
         super(props);
         this.state = {
@@ -13,8 +10,6 @@ class Pokedex extends Component {
          
         };
     }
-
-
 
     render(){
         return (
