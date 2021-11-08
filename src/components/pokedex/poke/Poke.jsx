@@ -20,10 +20,6 @@ class Poke extends Component {
         this.getPokemon(this.state.id);
     }
 
-    componentWillReceiveProps(nextProps) {
-        this.setState({ id: nextProps.id });
-        this.getPokemon(nextProps.id);
-    }
 
     async getPokemon(id) {
         this.setState({
@@ -31,7 +27,6 @@ class Poke extends Component {
         })
         if(id<1) id = 1;
         const pokemon = await PokeService.getPokeById(id);
-       // const pokemon = await PokeService.getById(id);
         this.setState({
             name: pokemon.data.name,
             image: pokemon.data.image,

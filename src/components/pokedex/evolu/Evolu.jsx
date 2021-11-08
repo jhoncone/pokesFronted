@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import PokeService from '../../service/PokeService';
 import Poke from "../poke/Poke";
-
 import M from "materialize-css"
 class Evolu extends Component {
 
@@ -16,15 +15,10 @@ class Evolu extends Component {
 
     componentDidMount() {
         M.AutoInit();
-        this.getEvolutionsById(this.state.id);
+        this.getEvolutions(this.state.id);
     }
 
-    componentWillReceiveProps(nextProps) {
-        this.setState({ id: nextProps.id });
-        this.getEvolutionsById(nextProps.id);
-    }
-
-    async getEvolutionsById(id){
+    async getEvolutions(id){
         this.setState({
             loading: true
         });
@@ -36,9 +30,6 @@ class Evolu extends Component {
         });
         M.AutoInit();
 
-    
-
-    
 }
 
 
@@ -47,10 +38,7 @@ render(){
         <div className="row">
             <div className="col s12">
                 { this.state.descriptions.map((element, i) =>{
-                    return <Poke id={element}
-                     
-                  
-                    />
+                    return <Poke id={element}  />
                     
                 })}
             </div>

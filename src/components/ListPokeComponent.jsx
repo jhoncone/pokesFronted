@@ -15,7 +15,6 @@ class ListPokeComponent extends Component {
        }
        viewPoke(id){
         this.props.history.push(`/view-poke/${id}`);
-       // this.props.history.push(`/update-producto/${id}`);
        }
 
        componentDidMount(){
@@ -104,9 +103,6 @@ class ListPokeComponent extends Component {
              </tbody>
             
             </table>
-            <Link to="/">Take me to login</Link>
-            <button onClick={() => this.props.history.push("/")}>Take me to \</button>
-
         </div>
 
 

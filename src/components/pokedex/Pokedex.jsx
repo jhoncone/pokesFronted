@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import M from "materialize-css";
 import Evolu from './evolu/Evolu';
 import Poke from './poke/Poke';
-import PokeService from '../service/PokeService';
 class Pokedex extends Component {
 
 
@@ -10,25 +9,13 @@ class Pokedex extends Component {
     constructor(props){
         super(props);
         this.state = {
-            id:this.props.match.params.id,
-            poke:{}
+            id:this.props.match.params.id
          
         };
     }
 
-    changeId(new_id){
-        if(new_id<1) new_id = 1;
-        this.setState({
-            id: new_id
-        });
-    }
-    componentDidMount(){
-        PokeService.getPokeById(this.state.id).then(res=>{
-            this.setState({poke:res.data});
-        })
-        M.AutoInit();
 
-    }
+
     render(){
         return (
             <div className="container">
@@ -47,18 +34,15 @@ class Pokedex extends Component {
                             </li>
                         </ul>
                     </div>
-                    <div className="card-action">
-                        <button className="btn btn-link" onClick={ () => this.changeId(this.state.pokemon_id - 1)}>Anterior</button>
-                        <button className="btn btn-link" onClick={ () => this.changeId(this.state.pokemon_id + 1)}>Siguiente</button>
-                    </div>
                 </div>
             </div>
         );
     }
 
-  //  componentDidMount() {
-       
-   // }
+    componentDidMount() {
+        M.AutoInit();
+    }
+
 }
 
 
